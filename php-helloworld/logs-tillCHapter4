@@ -1,0 +1,1486 @@
+[student@workstation ~]$ vi githup.txt
+[student@workstation ~]$ mv githup.txt github.txt 
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[student@workstation ~]$ ls
+Desktop    Downloads   Music     Public     venv
+Documents  github.txt  Pictures  Templates  Videos
+[student@workstation ~]$ vi github.txt 
+[student@workstation ~]$ lab
+lab            lab-configure  
+[student@workstation ~]$ lab
+lab            lab-configure  
+[student@workstation ~]$ lab-configure 
+
+ . Enter the GitHub account name: ramymw
+   Verifying GitHub account name: ramymw
+   ERROR: Cannot find GitHub account user 'ramymw'.
+
+   To reconfigure, run: lab-configure -d
+
+[student@workstation ~]$ lab-configure 
+
+ . Enter the GitHub account name: ra.mw86@gmail.com
+   Verifying GitHub account name: ra.mw86@gmail.com
+   ERROR: Cannot find GitHub account user 'ra.mw86@gmail.com'.
+
+   To reconfigure, run: lab-configure -d
+
+[student@workstation ~]$ lab-configure 
+
+ . Enter the GitHub account name: ramw86
+   Verifying GitHub account name: ramw86
+
+ . Enter the Quay.io account name: ramymw
+   Verifying Quay.io account name: ramymw
+
+ . Configuring RHT_OCP4_GITHUB_USER variable: SUCCESS
+ . Configuring RHT_OCP4_QUAY_USER variable:   SUCCESS
+
+ . To reconfigure, run: lab-configure -d
+
+ . Ensuring user 'developer' can log in to the OpenShift cluster.
+Warning: Permanently added 'utility,172.25.250.253' (ECDSA) to the list of known hosts.
+
+[student@workstation ~]$ git clone https://github.com/ramw86/DO180-apps
+Cloning into 'DO180-apps'...
+remote: Enumerating objects: 78, done.
+remote: Total 78 (delta 0), reused 0 (delta 0), pack-reused 78
+Unpacking objects: 100% (78/78), done.
+[student@workstation ~]$ cd DO180-apps/
+[student@workstation DO180-apps]$ git status 
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+[student@workstation DO180-apps]$ git checkout -b testbranch
+Switched to a new branch 'testbranch'
+[student@workstation DO180-apps]$ git status 
+On branch testbranch
+nothing to commit, working tree clean
+[student@workstation DO180-apps]$ echo "DO180" > Test
+[student@workstation DO180-apps]$ git add .
+[student@workstation DO180-apps]$ git commit -am "DO180"
+[testbranch 1efbe2c] DO180
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Test
+[student@workstation DO180-apps]$ git push --set-upstream origin testbranch 
+Username for 'https://github.com': ramw86
+Password for 'https://ramw86@github.com': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 285 bytes | 285.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'testbranch' on GitHub by visiting:
+remote:      https://github.com/ramw86/DO180-apps/pull/new/testbranch
+remote: 
+To https://github.com/ramw86/DO180-apps
+ * [new branch]      testbranch -> testbranch
+Branch 'testbranch' set up to track remote branch 'testbranch' from 'origin'.
+[student@workstation DO180-apps]$ cat Test 
+DO180
+[student@workstation DO180-apps]$ echo "OCP4.6" > Test 
+[student@workstation DO180-apps]$ git add .
+[student@workstation DO180-apps]$ git commit -am "OCP4.6"
+[testbranch 47ab979] OCP4.6
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[student@workstation DO180-apps]$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 275 bytes | 275.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ramw86/DO180-apps
+   1efbe2c..47ab979  testbranch -> testbranch
+[student@workstation DO180-apps]$ head README.md 
+# DO180-apps
+DO180 Repository for Sample Applications
+[student@workstation DO180-apps]$ ls
+example  nodejs-app  nodejs-helloworld  php-helloworld  README.md  temps  Test  todoapp
+[student@workstation DO180-apps]$ ls -ltr
+total 8
+-rw-rw-r--. 1 student student 54 May 23 08:04 README.md
+drwxrwxr-x. 2 student student 23 May 23 08:04 temps
+drwxrwxr-x. 2 student student 23 May 23 08:04 php-helloworld
+drwxrwxr-x. 2 student student 40 May 23 08:04 nodejs-helloworld
+drwxrwxr-x. 2 student student 43 May 23 08:04 nodejs-app
+drwxrwxr-x. 2 student student 23 May 23 08:04 example
+drwxrwxr-x. 5 student student 51 May 23 08:04 todoapp
+-rw-rw-r--. 1 student student  7 May 23 08:14 Test
+[student@workstation DO180-apps]$ history 
+    1  vi githup.txt
+    2  mv githup.txt github.txt 
+    3  ls
+    4  vi github.txt 
+    5  lab-configure 
+    6  git clone https://github.com/ramw86/DO180-apps
+    7  cd DO180-apps/
+    8  git status 
+    9  git checkout -b testbranch
+   10  git status 
+   11  echo "DO180" > Test
+   12  git add .
+   13  git commit -am "DO180"
+   14  git push --set-upstream origin testbranch 
+   15  cat Test 
+   16  echo "OCP4.6" > Test 
+   17  git add .
+   18  git commit -am "OCP4.6"
+   19  git push
+   20  head README.md 
+   21  ls
+   22  ls -ltr
+   23  history 
+[student@workstation DO180-apps]$ cd
+[student@workstation ~]$ lab container-create start
+
+Setting up workstation for the Guided Exercise: Creating a MySQL database instance
+
+ · Checking podman configuration...............................  SUCCESS
+ · Creating create_table.txt file..............................  SUCCESS
+[student@workstation ~]$ podman login registry.redhat.io
+Username: ramymw
+Password: 
+Login Succeeded!
+[student@workstation ~]$ podman run --name mysql-basic -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 -d registry.redhat.io/rhel8/mysql-80:1
+Trying to pull registry.redhat.io/rhel8/mysql-80:1...
+Getting image source signatures
+Copying blob f70d60810c69 done
+Copying blob 20cf5078419f done
+Copying blob 545277d80005 done
+Copying blob 0c1fd83997e1 done
+Copying config 6563d39225 done
+Writing manifest to image destination
+Storing signatures
+f26b026653b8601c70e6679e288110c3199753c54c51c207655208187fbd9b6c
+[student@workstation ~]$ podman ps --format "{{.ID}} {{.Image}}{{.Names}}"
+f26b026653b8 registry.redhat.io/rhel8/mysql-80:1mysql-basic
+[student@workstation ~]$ podman ps
+CONTAINER ID  IMAGE                                COMMAND     CREATED             STATUS                 PORTS  NAMES
+f26b026653b8  registry.redhat.io/rhel8/mysql-80:1  run-mysqld  About a minute ago  Up About a minute ago         mysql-basic
+[student@workstation ~]$ podman exec -it mysql-basic /bin/bash
+bash-4.4$ mysql -uroot
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.26 Source distribution
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| items              |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.01 sec)
+
+mysql> use items;
+Database changed
+mysql> CREATE TABLE Projects (id int NOT NULL name varchar(255) DEFAULT NULL code varchar(255) DEFAULT NULL PRIMARY KEY (id));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'name varchar(255) DEFAULT NULL code varchar(255) DEFAULT NULL PRIMARY KEY (id))' at line 1
+mysql> CREATE TABLE Projects (id int NOT NULL, name varchar(255) DEFAULT NULL code varchar(255) DEFAULT NULL PRIMARY KEY (id));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'code varchar(255) DEFAULT NULL PRIMARY KEY (id))' at line 1
+mysql> CREATE TABLE Projects (id int NOT NULL name varchar(255) DEFAULT NULL code varchar(255) DEFAULT NULL PRIMARY KEY (id));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'name varchar(255) DEFAULT NULL code varchar(255) DEFAULT NULL PRIMARY KEY (id))' at line 1
+mysql> CREATE TABLE Projects (id int NOT NULL,
+    -> name varchar(255) DEFAULT NULL,
+    -> code varchar(255) DEFAULT NULL,
+    -> PRIMARY KEY (id));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> show tables;
++-----------------+
+| Tables_in_items |
++-----------------+
+| Projects        |
++-----------------+
+1 row in set (0.01 sec)
+
+mysql> insert into Projects (id, name, code) values (1,'DevOps','DO180');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from Projects;
++----+--------+-------+
+| id | name   | code  |
++----+--------+-------+
+|  1 | DevOps | DO180 |
++----+--------+-------+
+1 row in set (0.00 sec)
+
+mysql> exit
+Bye
+bash-4.4$ exit
+exit
+[student@workstation ~]$ lab container-create finish 
+
+Completing the Guided Exercise: Creating a MySQL database instance
+
+ · Removing "mysql-basic" container............................  SUCCESS
+ · Removing "registry.redhat.io/rhel8/mysql-80:1" image........  SUCCESS
+[student@workstation ~]$ lab manage-lifecycle start
+
+Setting up workstation for the Guided Excercise: Managing a MySQL Container
+
+ · Checking podman configuration...............................  SUCCESS
+ · Setting up labs folder......................................  SUCCESS
+ · Downloading starter project.................................  SUCCESS
+ · Downloading solution project................................  SUCCESS
+
+Setup successful. Please proceed with the exercise.
+
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ podman login registry.redhat.io
+Authenticating with existing credentials...
+Existing credentials are valid. Already logged in to registry.redhat.io
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ podman run --name mysql-db rigistry.redhat.io/rhel8/mysql-80:latest
+Trying to pull rigistry.redhat.io/rhel8/mysql-80:latest...
+  Get https://rigistry.redhat.io/v2/: dial tcp: lookup rigistry.redhat.io on 172.25.250.254:53: no such host
+Error: unable to pull rigistry.redhat.io/rhel8/mysql-80:latest: unable to pull image: Error initializing source docker://rigistry.redhat.io/rhel8/mysql-80:latest: error pinging docker registry rigistry.redhat.io: Get https://rigistry.redhat.io/v2/: dial tcp: lookup rigistry.redhat.io on 172.25.250.254:53: no such host
+[student@workstation ~]$ podman run --name mysql-db rigistry.redhat.io/rhel8/mysql-80:1
+Trying to pull rigistry.redhat.io/rhel8/mysql-80:1...
+  Get https://rigistry.redhat.io/v2/: dial tcp: lookup rigistry.redhat.io on 172.25.250.254:53: no such host
+Error: unable to pull rigistry.redhat.io/rhel8/mysql-80:1: unable to pull image: Error initializing source docker://rigistry.redhat.io/rhel8/mysql-80:1: error pinging docker registry rigistry.redhat.io: Get https://rigistry.redhat.io/v2/: dial tcp: lookup rigistry.redhat.io on 172.25.250.254:53: no such host
+[student@workstation ~]$ podman run --name mysql-db registry.redhat.io/rhel8/mysql-80:latest
+Trying to pull registry.redhat.io/rhel8/mysql-80:latest...
+Getting image source signatures
+Copying blob 545277d80005 done
+Copying blob 20cf5078419f done
+Copying blob 0c1fd83997e1 done
+Copying blob f70d60810c69 done
+Copying config 6563d39225 done
+Writing manifest to image destination
+Storing signatures
+=> sourcing 20-validate-variables.sh ...
+You must either specify the following environment variables:
+  MYSQL_USER (regex: '^[a-zA-Z0-9_]+$')
+  MYSQL_PASSWORD (regex: '^[a-zA-Z0-9_~!@#$%^&*()-=<>,.?;:|]+$')
+  MYSQL_DATABASE (regex: '^[a-zA-Z0-9_]+$')
+Or the following environment variable:
+  MYSQL_ROOT_PASSWORD (regex: '^[a-zA-Z0-9_~!@#$%^&*()-=<>,.?;:|]+$')
+Or both.
+Optional Settings:
+  MYSQL_LOWER_CASE_TABLE_NAMES (default: 0)
+  MYSQL_LOG_QUERIES_ENABLED (default: 0)
+  MYSQL_MAX_CONNECTIONS (default: 151)
+  MYSQL_FT_MIN_WORD_LEN (default: 4)
+  MYSQL_FT_MAX_WORD_LEN (default: 20)
+  MYSQL_AIO (default: 1)
+  MYSQL_KEY_BUFFER_SIZE (default: 32M or 10% of available memory)
+  MYSQL_MAX_ALLOWED_PACKET (default: 200M)
+  MYSQL_TABLE_OPEN_CACHE (default: 400)
+  MYSQL_SORT_BUFFER_SIZE (default: 256K)
+  MYSQL_READ_BUFFER_SIZE (default: 8M or 5% of available memory)
+  MYSQL_INNODB_BUFFER_POOL_SIZE (default: 32M or 50% of available memory)
+  MYSQL_INNODB_LOG_FILE_SIZE (default: 8M or 15% of available memory)
+  MYSQL_INNODB_LOG_BUFFER_SIZE (default: 8M or 15% of available memory)
+
+For more information, see https://github.com/sclorg/mysql-container
+[student@workstation ~]$ podman logs mysql-db
+=> sourcing 20-validate-variables.sh ...
+You must either specify the following environment variables:
+  MYSQL_USER (regex: '^[a-zA-Z0-9_]+$')
+  MYSQL_PASSWORD (regex: '^[a-zA-Z0-9_~!@#$%^&*()-=<>,.?;:|]+$')
+  MYSQL_DATABASE (regex: '^[a-zA-Z0-9_]+$')
+Or the following environment variable:
+  MYSQL_ROOT_PASSWORD (regex: '^[a-zA-Z0-9_~!@#$%^&*()-=<>,.?;:|]+$')
+Or both.
+Optional Settings:
+  MYSQL_LOWER_CASE_TABLE_NAMES (default: 0)
+  MYSQL_LOG_QUERIES_ENABLED (default: 0)
+  MYSQL_MAX_CONNECTIONS (default: 151)
+  MYSQL_FT_MIN_WORD_LEN (default: 4)
+  MYSQL_FT_MAX_WORD_LEN (default: 20)
+  MYSQL_AIO (default: 1)
+  MYSQL_KEY_BUFFER_SIZE (default: 32M or 10% of available memory)
+  MYSQL_MAX_ALLOWED_PACKET (default: 200M)
+  MYSQL_TABLE_OPEN_CACHE (default: 400)
+  MYSQL_SORT_BUFFER_SIZE (default: 256K)
+  MYSQL_READ_BUFFER_SIZE (default: 8M or 5% of available memory)
+  MYSQL_INNODB_BUFFER_POOL_SIZE (default: 32M or 50% of available memory)
+  MYSQL_INNODB_LOG_FILE_SIZE (default: 8M or 15% of available memory)
+  MYSQL_INNODB_LOG_BUFFER_SIZE (default: 8M or 15% of available memory)
+
+For more information, see https://github.com/sclorg/mysql-container
+[student@workstation ~]$ podman run --name mysql -d -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 registry.redhat.io/rhel8/mysql-80:1
+Trying to pull registry.redhat.io/rhel8/mysql-80:1...
+Getting image source signatures
+Copying blob 20cf5078419f skipped: already exists
+Copying blob 545277d80005 skipped: already exists
+Copying blob f70d60810c69 skipped: already exists
+Copying blob 0c1fd83997e1 skipped: already exists
+Copying config 6563d39225 done
+Writing manifest to image destination
+Storing signatures
+7d804be09b9a80d079a1a9f10ed1d220c99fa102711003966ef171d353537911
+[student@workstation ~]$ podman ps -a
+CONTAINER ID  IMAGE                                     COMMAND     CREATED        STATUS                    PORTS  NAMES
+7d804be09b9a  registry.redhat.io/rhel8/mysql-80:1       run-mysqld  6 seconds ago  Up 5 seconds ago                 mysql
+9d3fd2269d9b  registry.redhat.io/rhel8/mysql-80:latest  run-mysqld  3 minutes ago  Exited (1) 3 minutes ago         mysql-db
+[student@workstation ~]$ podman ps --format="{{.ID}} {{.Names}} {{.Status}}"
+7d804be09b9a mysql Up 50 seconds ago
+[student@workstation ~]$ ls Do
+Documents/ Downloads/ 
+[student@workstation ~]$ ls Do
+Documents/ Downloads/ 
+[student@workstation ~]$ pwd
+/home/student
+[student@workstation ~]$ ls DO180/labs/manage-lifecycle/db.sql 
+DO180/labs/manage-lifecycle/db.sql
+[student@workstation ~]$ podman cp /home/student/DO180/labs/manage-lifecycle/db.sql mysql:/
+[student@workstation ~]$ podman exec mysql /bin/bash -c 'mysql -uuser1 -pmypa55 items < /db.sql
+> '
+mysql: [Warning] Using a password on the command line interface can be insecure.
+[student@workstation ~]$ podman run --name mysql-2 -it registry.redhat.io/rhel8/mysql-80:1 /bin/bash
+bash-4.4$ mysql -uroot
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2)
+bash-4.4$ exit
+exit
+[student@workstation ~]$ podman ps --format="{{.ID}} {{.Names}} {{.Status}}"
+7d804be09b9a mysql Up 8 minutes ago
+[student@workstation ~]$ podman run --name mysql-2 -it registry.redhat.io/rhel8/mysql-80:1 /bin/bash
+Error: error creating container storage: the container name "mysql-2" is already in use by "d2d4ea1ce64e083b5abff90efbcc5a06a48565939cc90e94b41e34b7924fc1a5". You have to remove that container to be able to reuse that name.: that name is already in use
+[student@workstation ~]$ podman ps -a --format="{{.ID}} {{.Names}} {{.Status}}"
+d2d4ea1ce64e mysql-2 Exited (1) 50 seconds ago
+7d804be09b9a mysql Up 9 minutes ago
+9d3fd2269d9b mysql-db Exited (1) 12 minutes ago
+[student@workstation ~]$ podman exec mysql /bin/bash
+[student@workstation ~]$ podman exec mysql /bin/bash -c 'mysql -uuser1 -pmypa55 -e "select * from items.Projects;"'
+mysql: [Warning] Using a password on the command line interface can be insecure.
+id	name	code
+1	DevOps	DO180
+[student@workstation ~]$ ps -a
+    PID TTY          TIME CMD
+   1519 tty1     00:00:01 Xorg
+   1554 tty1     00:00:00 gnome-session-b
+   1588 tty1     00:00:26 gnome-shell
+   1607 tty1     00:00:01 ibus-daemon
+   1610 tty1     00:00:00 ibus-dconf
+   1614 tty1     00:00:00 ibus-x11
+   1651 tty1     00:00:00 gsd-xsettings
+   1652 tty1     00:00:00 gsd-a11y-settin
+   1656 tty1     00:00:00 gsd-clipboard
+   1657 tty1     00:00:00 gsd-color
+   1658 tty1     00:00:00 gsd-datetime
+   1660 tty1     00:00:00 gsd-housekeepin
+   1668 tty1     00:00:00 gsd-keyboard
+   1674 tty1     00:00:00 gsd-media-keys
+   1675 tty1     00:00:00 gsd-mouse
+   1677 tty1     00:00:00 gsd-power
+   1683 tty1     00:00:00 gsd-print-notif
+   1684 tty1     00:00:00 gsd-rfkill
+   1689 tty1     00:00:00 gsd-screensaver
+   1696 tty1     00:00:00 gsd-sharing
+   1705 tty1     00:00:09 gsd-smartcard
+   1713 tty1     00:00:00 gsd-sound
+   1715 tty1     00:00:00 gsd-wacom
+   1747 tty1     00:00:00 ibus-engine-sim
+   1935 tty2     00:01:20 Xorg
+   1957 tty2     00:00:00 gnome-session-b
+   2054 tty2     00:05:27 gnome-shell
+   2085 tty2     00:00:01 ibus-daemon
+   2089 tty2     00:00:00 ibus-dconf
+   2091 tty2     00:00:00 ibus-extension-
+   2095 tty2     00:00:00 ibus-x11
+   2178 tty2     00:00:00 gsd-power
+   2179 tty2     00:00:00 gsd-print-notif
+   2182 tty2     00:00:00 gsd-rfkill
+   2186 tty2     00:00:00 gsd-screensaver
+   2190 tty2     00:00:00 gsd-sharing
+   2194 tty2     00:00:09 gsd-smartcard
+   2198 tty2     00:00:00 gsd-xsettings
+   2208 tty2     00:00:00 gsd-sound
+   2209 tty2     00:00:00 gsd-wacom
+   2217 tty2     00:00:00 gsd-account
+   2220 tty2     00:00:00 gsd-a11y-settin
+   2222 tty2     00:00:00 gsd-color
+   2224 tty2     00:00:00 gsd-clipboard
+   2229 tty2     00:00:01 gsd-housekeepin
+   2231 tty2     00:00:00 gsd-datetime
+   2235 tty2     00:00:00 gsd-media-keys
+   2239 tty2     00:00:00 gsd-keyboard
+   2243 tty2     00:00:00 gsd-mouse
+   2286 tty2     00:00:00 tracker-miner-a
+   2291 tty2     00:00:00 tracker-miner-f
+   2309 tty2     00:00:00 seapplet
+   2316 tty2     00:00:00 evolution-alarm
+   2318 tty2     00:00:00 gsd-printer
+   2333 tty2     00:00:01 gnome-software
+   2337 tty2     00:00:00 gsd-disk-utilit
+   2367 tty2     00:00:00 ibus-engine-sim
+   2697 tty2     00:04:37 firefox
+   2882 tty2     00:00:11 WebExtensions
+   2903 tty2     00:00:06 Web Content
+   2959 tty2     00:00:12 Web Content
+   3007 tty2     00:08:08 Web Content
+   3227 tty2     00:00:46 Web Content
+   3554 tty2     00:00:26 Web Content
+   4096 tty2     00:00:38 Web Content
+   5046 tty2     00:00:00 Web Content
+  19632 pts/0    00:00:00 slirp4netns
+  20450 pts/0    00:00:00 ps
+[student@workstation ~]$ ps -uaxf| grep mysql
+student    20458  0.0  0.0 221900   980 pts/0    S+   03:55   0:00  |   |   \_ grep --color=auto mysql
+100026     19646  0.2  5.3 1611760 316828 ?      Ssl  03:43   0:01      \_ /usr/libexec/mysqld --defaults-file=/etc/my.cnf
+[student@workstation ~]$ podman ps -a
+CONTAINER ID  IMAGE                                     COMMAND     CREATED         STATUS                     PORTS  NAMES
+d2d4ea1ce64e  registry.redhat.io/rhel8/mysql-80:1       /bin/bash   4 minutes ago   Exited (1) 4 minutes ago          mysql-2
+7d804be09b9a  registry.redhat.io/rhel8/mysql-80:1       run-mysqld  12 minutes ago  Up 12 minutes ago                 mysql
+9d3fd2269d9b  registry.redhat.io/rhel8/mysql-80:latest  run-mysqld  15 minutes ago  Exited (1) 15 minutes ago         mysql-db
+[student@workstation ~]$ podman exec mysql /bin/bash -c 'mysql -uuser1 -pmypa55 -e "select * from items.Projects;"'
+mysql: [Warning] Using a password on the command line interface can be insecure.
+id	name	code
+1	DevOps	DO180
+[student@workstation ~]$ lab manage-lifecycle finish
+
+Completing the Guided Excercise: Managing a MySQL Container
+
+ · Stopping 'mysql' container..................................  SUCCESS
+ · Stopping 'mysql-2' container................................  SUCCESS
+ · Removing 'mysql' container..................................  SUCCESS
+ · Removing 'mysql-2' container................................  SUCCESS
+ · Removing 'mysql-db' container...............................  SUCCESS
+ · Removing 'registry.redhat.io/rhel8/mysql-80:1' image........  SUCCESS
+ · Removing the project directory..............................  SUCCESS
+ · Removing the solution directory.............................  SUCCESS
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ history 
+    1  vi githup.txt
+    2  mv githup.txt github.txt 
+    3  ls
+    4  vi github.txt 
+    5  lab-configure 
+    6  git clone https://github.com/ramw86/DO180-apps
+    7  cd DO180-apps/
+    8  git status 
+    9  git checkout -b testbranch
+   10  git status 
+   11  echo "DO180" > Test
+   12  git add .
+   13  git commit -am "DO180"
+   14  git push --set-upstream origin testbranch 
+   15  cat Test 
+   16  echo "OCP4.6" > Test 
+   17  git add .
+   18  git commit -am "OCP4.6"
+   19  git push
+   20  head README.md 
+   21  ls
+   22  ls -ltr
+   23  history 
+   24  cd
+   25  lab container-create start
+   26  podman login registry.redhat.io
+   27  podman run --name mysql-basic -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 -d registry.redhat.io/rhel8/mysql-80:1
+   28  podman ps --format "{{.ID}} {{.Image}}{{.Names}}"
+   29  podman ps
+   30  podman exec -it mysql-basic /bin/bash
+   31  lab container-create finish 
+   32  lab manage-lifecycle start
+   33  podman login registry.redhat.io
+   34  podman run --name mysql-db rigistry.redhat.io/rhel8/mysql-80:latest
+   35  podman run --name mysql-db rigistry.redhat.io/rhel8/mysql-80:1
+   36  podman run --name mysql-db registry.redhat.io/rhel8/mysql-80:latest
+   37  podman logs mysql-db
+   38  podman run --name mysql -d -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 registry.redhat.io/rhel8/mysql-80:1
+   39  podman ps -a
+   40  podman ps --format="{{.ID}} {{.Names}} {{.Status}}"
+   41  pwd
+   42  ls DO180/labs/manage-lifecycle/db.sql 
+   43  podman cp /home/student/DO180/labs/manage-lifecycle/db.sql mysql:/
+   44  podman exec mysql /bin/bash -c 'mysql -uuser1 -pmypa55 items < /db.sql
+'
+   45  podman run --name mysql-2 -it registry.redhat.io/rhel8/mysql-80:1 /bin/bash
+   46  podman ps --format="{{.ID}} {{.Names}} {{.Status}}"
+   47  podman run --name mysql-2 -it registry.redhat.io/rhel8/mysql-80:1 /bin/bash
+   48  podman ps -a --format="{{.ID}} {{.Names}} {{.Status}}"
+   49  podman exec mysql /bin/bash
+   50  podman exec mysql /bin/bash -c 'mysql -uuser1 -pmypa55 -e "select * from items.Projects;"'
+   51  ps -a
+   52  ps -uaxf| grep mysql
+   53  podman ps -a
+   54  podman exec mysql /bin/bash -c 'mysql -uuser1 -pmypa55 -e "select * from items.Projects;"'
+   55  lab manage-lifecycle finish
+   56  history 
+[student@workstation ~]$ podman run --name httpd-24 registry.redhat.io/rhel8/httpd-24
+Trying to pull registry.redhat.io/rhel8/httpd-24...
+Getting image source signatures
+Copying blob 0c1fd83997e1 done
+Copying blob f70d60810c69 done
+Copying blob 81b475edfc37 done
+Copying blob 545277d80005 done
+Copying config bed94ad3a0 done
+Writing manifest to image destination
+Storing signatures
+=> sourcing 10-set-mpm.sh ...
+=> sourcing 20-copy-config.sh ...
+=> sourcing 40-ssl-certs.sh ...
+---> Generating SSL key pair for httpd...
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 10.0.2.100. Set the 'ServerName' directive globally to suppress this message
+[Tue May 24 08:02:38.771702 2022] [ssl:warn] [pid 1:tid 139950401269184] AH01909: 10.0.2.100:8443:0 server certificate does NOT include an ID which matches the server name
+[Tue May 24 08:02:38.772391 2022] [:notice] [pid 1:tid 139950401269184] ModSecurity for Apache/2.9.2 (http://www.modsecurity.org/) configured.
+[Tue May 24 08:02:38.772402 2022] [:notice] [pid 1:tid 139950401269184] ModSecurity: APR compiled version="1.6.3"; loaded version="1.6.3"
+[Tue May 24 08:02:38.772406 2022] [:notice] [pid 1:tid 139950401269184] ModSecurity: PCRE compiled version="8.42 "; loaded version="8.42 2018-03-20"
+[Tue May 24 08:02:38.772415 2022] [:notice] [pid 1:tid 139950401269184] ModSecurity: LUA compiled version="Lua 5.3"
+[Tue May 24 08:02:38.772417 2022] [:notice] [pid 1:tid 139950401269184] ModSecurity: YAJL compiled version="2.1.0"
+[Tue May 24 08:02:38.772418 2022] [:notice] [pid 1:tid 139950401269184] ModSecurity: LIBXML compiled version="2.9.7"
+[Tue May 24 08:02:38.772420 2022] [:notice] [pid 1:tid 139950401269184] ModSecurity: Status engine is currently disabled, enable it by set SecStatusEngine to On.
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 10.0.2.100. Set the 'ServerName' directive globally to suppress this message
+[Tue May 24 08:02:38.906945 2022] [ssl:warn] [pid 1:tid 139950401269184] AH01909: 10.0.2.100:8443:0 server certificate does NOT include an ID which matches the server name
+[Tue May 24 08:02:38.907303 2022] [lbmethod_heartbeat:notice] [pid 1:tid 139950401269184] AH02282: No slotmem from mod_heartmonitor
+[Tue May 24 08:02:38.920458 2022] [mpm_event:notice] [pid 1:tid 139950401269184] AH00489: Apache/2.4.37 (Red Hat Enterprise Linux) OpenSSL/1.1.1k configured -- resuming normal operations
+[Tue May 24 08:02:38.920488 2022] [core:notice] [pid 1:tid 139950401269184] AH00094: Command line: 'httpd -D FOREGROUND'
+
+
+
+
+
+^C[Tue May 24 08:04:03.255552 2022] [mpm_event:notice] [pid 1:tid 139950401269184] AH00491: caught SIGTERM, shutting down
+[student@workstation ~]$ lab manage-storage start
+
+Setting up workstation for the Guided Exercise: Persisting a MySQL Database
+
+ · Checking podman configuration...............................  SUCCESS
+ · Check if the directory used by lab is not created...........  SUCCESS
+[student@workstation ~]$ mkdir -pv /home/student/local/mysql
+mkdir: created directory '/home/student/local'
+mkdir: created directory '/home/student/local/mysql'
+[student@workstation ~]$ sudo semanage fcontext -a -t container_file_t '/home/student/local/mysql(/.*)?'
+[student@workstation ~]$ ls -ldZ /home/student/local/mysql
+drwxrwxr-x. 2 student student unconfined_u:object_r:user_home_t:s0 6 May 24 04:04 /home/student/local/mysql
+[student@workstation ~]$ podman unshare chown 27:27 /home/student/local/mysql
+[student@workstation ~]$ podman pull registry.redhat.io/rhel8/mysql-80:1
+Trying to pull registry.redhat.io/rhel8/mysql-80:1...
+Getting image source signatures
+Copying blob f70d60810c69 skipped: already exists
+Copying blob 545277d80005 skipped: already exists
+Copying blob 0c1fd83997e1 skipped: already exists
+Copying blob 20cf5078419f done
+Copying config 6563d39225 done
+Writing manifest to image destination
+Storing signatures
+6563d392258e1a7c311abea3d3963fc0800ab2fdcc35e14b78ddd5d4bebf14f7
+[student@workstation ~]$ podman run --name persist-db -d -v /home/student/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 registry.redhat.io/rhel8/mysql-80:1
+a88c1623c35e0ad68816cc6e3c1ea5bd936d66eeaebfc7346d680d72f36ef7dc
+[student@workstation ~]$ podman ps --format="{{.ID}} {{.Names}} {{.Status}}"
+[student@workstation ~]$ podman ps -a --format="{{.ID}} {{.Names}} {{.Status}}"
+a88c1623c35e persist-db Exited (1) About a minute ago
+84e7905f01e6 httpd-24 Exited (0) 5 minutes ago
+[student@workstation ~]$ podman run --name persist-db -d -v /home/student/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 registry.redhat.io/rhel8/mysql-80:1
+Error: error creating container storage: the container name "persist-db" is already in use by "a88c1623c35e0ad68816cc6e3c1ea5bd936d66eeaebfc7346d680d72f36ef7dc". You have to remove that container to be able to reuse that name.: that name is already in use
+[student@workstation ~]$ podman rm persist-db
+a88c1623c35e0ad68816cc6e3c1ea5bd936d66eeaebfc7346d680d72f36ef7dc
+[student@workstation ~]$ podman run --name persist-db -d -v /home/student/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 registry.redhat.io/rhel8/mysql-80:1
+5b18e917ed25daa975c9111354eda24e4a519b2169946bfd81fb51a7f9ef93e9
+[student@workstation ~]$ podman ps --format="{{.ID}} {{.Names}} {{.Status}}"
+[student@workstation ~]$ podman ps -a
+CONTAINER ID  IMAGE                                     COMMAND               CREATED             STATUS                         PORTS  NAMES
+5b18e917ed25  registry.redhat.io/rhel8/mysql-80:1       run-mysqld            About a minute ago  Exited (1) About a minute ago         persist-db
+84e7905f01e6  registry.redhat.io/rhel8/httpd-24:latest  /usr/bin/run-http...  10 minutes ago      Exited (0) 8 minutes ago              httpd-24
+[student@workstation ~]$ podman rm httpd-24
+84e7905f01e6d3bea1daf6eab27f853c324593eb1c91c86bd9bd108d377f622c
+[student@workstation ~]$ podman ps -a
+CONTAINER ID  IMAGE                                COMMAND     CREATED             STATUS                         PORTS  NAMES
+5b18e917ed25  registry.redhat.io/rhel8/mysql-80:1  run-mysqld  About a minute ago  Exited (1) About a minute ago         persist-db
+[student@workstation ~]$ podman rm persist-db
+5b18e917ed25daa975c9111354eda24e4a519b2169946bfd81fb51a7f9ef93e9
+[student@workstation ~]$ podman run --name persist-db -d -v /home/student/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 registry.redhat.io/rhel8/mysql-80:1
+8b53101a47e6d95986c907084f9145af3d7a56eabcf678a5e2f1d384eb6bbef8
+[student@workstation ~]$ podman ps -a
+CONTAINER ID  IMAGE                                COMMAND     CREATED        STATUS                    PORTS  NAMES
+8b53101a47e6  registry.redhat.io/rhel8/mysql-80:1  run-mysqld  4 seconds ago  Exited (1) 3 seconds ago         persist-db
+[student@workstation ~]$ ls -ld /home/student/local/mysql/items
+ls: cannot access '/home/student/local/mysql/items': No such file or directory
+[student@workstation ~]$ ls -ldZ /home/student/local/mysql
+drwxrwxr-x. 2 100026 100026 unconfined_u:object_r:user_home_t:s0 6 May 24 04:04 /home/student/local/mysql
+[student@workstation ~]$ podman unshare chown 27:27 /home/student/local/mysql
+[student@workstation ~]$ podman rm persist-db
+8b53101a47e6d95986c907084f9145af3d7a56eabcf678a5e2f1d384eb6bbef8
+[student@workstation ~]$ podman run --name persist-db -d -v /home/student/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 registry.redhat.io/rhel8/mysql-80:1
+89235893f2f3ecad56c9487849f4729f7d79f046e02db491343dfd10d1233825
+[student@workstation ~]$ podman ps -a
+CONTAINER ID  IMAGE                                COMMAND     CREATED        STATUS                    PORTS  NAMES
+89235893f2f3  registry.redhat.io/rhel8/mysql-80:1  run-mysqld  7 seconds ago  Exited (1) 5 seconds ago         persist-db
+[student@workstation ~]$ ls -ld /home/student/local/mysql/items
+ls: cannot access '/home/student/local/mysql/items': No such file or directory
+[student@workstation ~]$ ls -ld /home/student/local/mysql/
+drwxrwxr-x. 2 100026 100026 6 May 24 04:04 /home/student/local/mysql/
+[student@workstation ~]$ lab manage-storage finish
+
+Completing the Guided Exercise: Persisting a MySQL Database
+
+ · Stopping 'persist-db' container.............................  SUCCESS
+ · Removing 'persist-db' container.............................  SUCCESS
+ · Removing the 'registry.redhat.io/rhel8/mysql-80:1' image....  SUCCESS
+ · Removing the /home/student/local/mysql directory............  SUCCESS
+ · Removing the fcontext for /home/student/local/mysql.........  SUCCESS
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ podman ps -a
+CONTAINER ID  IMAGE  COMMAND  CREATED  STATUS  PORTS  NAMES
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ history 
+    1  vi githup.txt
+    2  mv githup.txt github.txt 
+    3  ls
+    4  vi github.txt 
+    5  lab-configure 
+    6  git clone https://github.com/ramw86/DO180-apps
+    7  cd DO180-apps/
+    8  git status 
+    9  git checkout -b testbranch
+   10  git status 
+   11  echo "DO180" > Test
+   12  git add .
+   13  git commit -am "DO180"
+   14  git push --set-upstream origin testbranch 
+   15  cat Test 
+   16  echo "OCP4.6" > Test 
+   17  git add .
+   18  git commit -am "OCP4.6"
+   19  git push
+   20  head README.md 
+   21  ls
+   22  ls -ltr
+   23  history 
+   24  cd
+   25  lab container-create start
+   26  podman login registry.redhat.io
+   27  podman run --name mysql-basic -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 -d registry.redhat.io/rhel8/mysql-80:1
+   28  podman ps --format "{{.ID}} {{.Image}}{{.Names}}"
+   29  podman ps
+   30  podman exec -it mysql-basic /bin/bash
+   31  lab container-create finish 
+   32  lab manage-lifecycle start
+   33  podman login registry.redhat.io
+   34  podman run --name mysql-db rigistry.redhat.io/rhel8/mysql-80:latest
+   35  podman run --name mysql-db rigistry.redhat.io/rhel8/mysql-80:1
+   36  podman run --name mysql-db registry.redhat.io/rhel8/mysql-80:latest
+   37  podman logs mysql-db
+   38  podman run --name mysql -d -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 registry.redhat.io/rhel8/mysql-80:1
+   39  podman ps -a
+   40  podman ps --format="{{.ID}} {{.Names}} {{.Status}}"
+   41  pwd
+   42  ls DO180/labs/manage-lifecycle/db.sql 
+   43  podman cp /home/student/DO180/labs/manage-lifecycle/db.sql mysql:/
+   44  podman exec mysql /bin/bash -c 'mysql -uuser1 -pmypa55 items < /db.sql
+'
+   45  podman run --name mysql-2 -it registry.redhat.io/rhel8/mysql-80:1 /bin/bash
+   46  podman ps --format="{{.ID}} {{.Names}} {{.Status}}"
+   47  podman run --name mysql-2 -it registry.redhat.io/rhel8/mysql-80:1 /bin/bash
+   48  podman ps -a --format="{{.ID}} {{.Names}} {{.Status}}"
+   49  podman exec mysql /bin/bash
+   50  podman exec mysql /bin/bash -c 'mysql -uuser1 -pmypa55 -e "select * from items.Projects;"'
+   51  ps -a
+   52  ps -uaxf| grep mysql
+   53  podman ps -a
+   54  podman exec mysql /bin/bash -c 'mysql -uuser1 -pmypa55 -e "select * from items.Projects;"'
+   55  lab manage-lifecycle finish
+   56  history 
+   57  podman run --name httpd-24 registry.redhat.io/rhel8/httpd-24
+   58  lab manage-storage start
+   59  mkdir -pv /home/student/local/mysql
+   60  sudo semanage fcontext -a -t container_file_t '/home/student/local/mysql(/.*)?'
+   61  ls -ldZ /home/student/local/mysql
+   62  podman unshare chown 27:27 /home/student/local/mysql
+   63  podman pull registry.redhat.io/rhel8/mysql-80:1
+   64  podman run --name persist-db -d -v /home/student/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 registry.redhat.io/rhel8/mysql-80:1
+   65  podman ps --format="{{.ID}} {{.Names}} {{.Status}}"
+   66  podman ps -a --format="{{.ID}} {{.Names}} {{.Status}}"
+   67  podman run --name persist-db -d -v /home/student/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 registry.redhat.io/rhel8/mysql-80:1
+   68  podman rm persist-db
+   69  podman run --name persist-db -d -v /home/student/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 registry.redhat.io/rhel8/mysql-80:1
+   70  podman ps --format="{{.ID}} {{.Names}} {{.Status}}"
+   71  podman ps -a
+   72  podman rm httpd-24
+   73  podman ps -a
+   74  podman rm persist-db
+   75  podman run --name persist-db -d -v /home/student/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 registry.redhat.io/rhel8/mysql-80:1
+   76  podman ps -a
+   77  ls -ld /home/student/local/mysql/items
+   78  ls -ldZ /home/student/local/mysql
+   79  podman unshare chown 27:27 /home/student/local/mysql
+   80  podman rm persist-db
+   81  podman run --name persist-db -d -v /home/student/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 registry.redhat.io/rhel8/mysql-80:1
+   82  podman ps -a
+   83  ls -ld /home/student/local/mysql/items
+   84  ls -ld /home/student/local/mysql/
+   85  lab manage-storage finish
+   86  podman ps -a
+   87  history 
+[student@workstation ~]$ lab manage-storage start
+
+Setting up workstation for the Guided Exercise: Persisting a MySQL Database
+
+ · Checking podman configuration...............................  SUCCESS
+ · Check if the directory used by lab is not created...........  SUCCESS
+[student@workstation ~]$ sudo semanage fcontext -a -t container_file_t '/home/student/local/mysql(/.*)?'
+[student@workstation ~]$ ls /home/student/local/
+[student@workstation ~]$ mkdir -pv /home/student/local/mysql
+mkdir: created directory '/home/student/local/mysql'
+[student@workstation ~]$ sudo semanage fcontext -a -t container_file_t '/home/student/local/mysql(/.*)?'
+ValueError: File context for /home/student/local/mysql(/.*)? already defined
+[student@workstation ~]$ sudo restorecon -R /home/student/local/mysql
+[student@workstation ~]$ ls -ldZ /home/student/local/mysql
+drwxrwxr-x. 2 student student unconfined_u:object_r:container_file_t:s0 6 May 24 04:48 /home/student/local/mysql
+[student@workstation ~]$ podman unshare chown 27:27 /home/student/local/mysql
+[student@workstation ~]$ podman pull registry.redhat.io/rhel8/mysql-80:1
+Trying to pull registry.redhat.io/rhel8/mysql-80:1...
+Getting image source signatures
+Copying blob 0c1fd83997e1 skipped: already exists
+Copying blob f70d60810c69 skipped: already exists
+Copying blob 545277d80005 skipped: already exists
+Copying blob 20cf5078419f done
+Copying config 6563d39225 done
+Writing manifest to image destination
+Storing signatures
+6563d392258e1a7c311abea3d3963fc0800ab2fdcc35e14b78ddd5d4bebf14f7
+[student@workstation ~]$ podman ps
+CONTAINER ID  IMAGE  COMMAND  CREATED  STATUS  PORTS  NAMES
+[student@workstation ~]$ podman run --name persist-db -d -v /home/student/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 registry.redhat.io/rhel8/mysql-80:1
+528651b63ed822cb324f5d9203d6ef58dbdb2cf833ecd4a24e54bbe880b4d26d
+[student@workstation ~]$ podman ps
+CONTAINER ID  IMAGE                                COMMAND     CREATED        STATUS            PORTS  NAMES
+528651b63ed8  registry.redhat.io/rhel8/mysql-80:1  run-mysqld  5 seconds ago  Up 4 seconds ago         persist-db
+[student@workstation ~]$ ls -ldZ /home/student/local/mysql
+drwxrwxr-x. 7 100026 100026 unconfined_u:object_r:container_file_t:s0 4096 May 24 04:52 /home/student/local/mysql
+[student@workstation ~]$ ls -ldZ /home/student/local/mysql/items/
+drwxr-x---. 2 100026 100026 system_u:object_r:container_file_t:s0 6 May 24 04:52 /home/student/local/mysql/items/
+[student@workstation ~]$ podman run --name persist-db-02 -d -v /home/student/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 registry.redhat.io/rhel8/mysql-80:1
+f4890ddf4458592600b015311500567638f30722f2c7e6ecab21eda9e4ebbfe8
+[student@workstation ~]$ podman ps 
+CONTAINER ID  IMAGE                                COMMAND     CREATED         STATUS             PORTS  NAMES
+f4890ddf4458  registry.redhat.io/rhel8/mysql-80:1  run-mysqld  12 seconds ago  Up 12 seconds ago         persist-db-02
+528651b63ed8  registry.redhat.io/rhel8/mysql-80:1  run-mysqld  13 minutes ago  Up 13 minutes ago         persist-db
+[student@workstation ~]$ podman exec -it f4890ddf4458592600b015311500567638f30722f2c7e6ecab21eda9e4ebbfe8 bash
+bash-4.4$ mysql -uuser1 -pmypa55 items
+mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2)
+bash-4.4$ Error: non zero exit code: 137: OCI runtime error
+[student@workstation ~]$ podman ps 
+CONTAINER ID  IMAGE                                COMMAND     CREATED         STATUS             PORTS  NAMES
+528651b63ed8  registry.redhat.io/rhel8/mysql-80:1  run-mysqld  14 minutes ago  Up 14 minutes ago         persist-db
+[student@workstation ~]$ podman exec -it persist-db bash
+bash-4.4$ mysql -uuser1 -pmypa55 items
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.26 Source distribution
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> exit
+Bye
+bash-4.4$ exit
+exit
+[student@workstation ~]$ podman ps 
+CONTAINER ID  IMAGE                                COMMAND     CREATED         STATUS             PORTS  NAMES
+528651b63ed8  registry.redhat.io/rhel8/mysql-80:1  run-mysqld  16 minutes ago  Up 16 minutes ago         persist-db
+[student@workstation ~]$ podman rm f4890ddf4458592600b015311500567638f30722f2c7e6ecab21eda9e4ebbfe8
+f4890ddf4458592600b015311500567638f30722f2c7e6ecab21eda9e4ebbfe8
+[student@workstation ~]$ lab manage-storage finish
+
+Completing the Guided Exercise: Persisting a MySQL Database
+
+ · Stopping 'persist-db' container.............................  SUCCESS
+ · Removing 'persist-db' container.............................  SUCCESS
+ · Removing the 'registry.redhat.io/rhel8/mysql-80:1' image....  SUCCESS
+ · Removing the /home/student/local/mysql directory............  SUCCESS
+ · Removing the fcontext for /home/student/local/mysql.........  SUCCESS
+[student@workstation ~]$ podman run -d --name apache2 -p 127.0.0.1:8081:80 registry.redhat.io/rhel8/httpd-24
+5d5bf97b3b0793579eea3a96e0f2bc76bef9acce2d4a6da660532afdefb515f0
+[student@workstation ~]$ podman ps
+CONTAINER ID  IMAGE                                     COMMAND               CREATED        STATUS            PORTS                   NAMES
+5d5bf97b3b07  registry.redhat.io/rhel8/httpd-24:latest  /usr/bin/run-http...  6 seconds ago  Up 5 seconds ago  127.0.0.1:8081->80/tcp  apache2
+[student@workstation ~]$ podman run -d --name apache3 -p 127.0.0.1:80 registry.redhat.io/rhel8/httpd-24
+Error: Invalid hostPort: 127.0.0.1
+[student@workstation ~]$ podman port apache2
+80/tcp -> 127.0.0.1:8081
+[student@workstation ~]$ curl 127.0.0.1:8081
+curl: (56) Recv failure: Connection reset by peer
+[student@workstation ~]$ podman run -d --name apache3 -p 127.0.0.1:80 registry.redhat.io/rhel8/httpd-24
+Error: Invalid hostPort: 127.0.0.1
+[student@workstation ~]$ sudo netstat -natupl| grep LISTEN
+tcp        0      0 192.168.122.1:53        0.0.0.0:*               LISTEN      1401/dnsmasq        
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      1184/sshd           
+tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      2264/cupsd          
+tcp        0      0 0.0.0.0:5355            0.0.0.0:*               LISTEN      1292/systemd-resolv 
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      1/systemd           
+tcp        0      0 127.0.0.1:8081          0.0.0.0:*               LISTEN      24983/slirp4netns   
+tcp6       0      0 :::22                   :::*                    LISTEN      1184/sshd           
+tcp6       0      0 ::1:631                 :::*                    LISTEN      2264/cupsd          
+tcp6       0      0 :::5355                 :::*                    LISTEN      1292/systemd-resolv 
+tcp6       0      0 :::111                  :::*                    LISTEN      1/systemd           
+[student@workstation ~]$ curl 127.0.0.1:80
+curl: (7) Failed to connect to 127.0.0.1 port 80: Connection refused
+[student@workstation ~]$ podman ps
+CONTAINER ID  IMAGE                                     COMMAND               CREATED        STATUS            PORTS                   NAMES
+5d5bf97b3b07  registry.redhat.io/rhel8/httpd-24:latest  /usr/bin/run-http...  7 minutes ago  Up 7 minutes ago  127.0.0.1:8081->80/tcp  apache2
+[student@workstation ~]$ podman ps -a
+CONTAINER ID  IMAGE                                     COMMAND               CREATED        STATUS            PORTS                   NAMES
+5d5bf97b3b07  registry.redhat.io/rhel8/httpd-24:latest  /usr/bin/run-http...  7 minutes ago  Up 7 minutes ago  127.0.0.1:8081->80/tcp  apache2
+[student@workstation ~]$ curl 127.0.0.1:8081
+curl: (56) Recv failure: Connection reset by peer
+[student@workstation ~]$ podman run -d --name apache4 -p 80 registry.redhat.io/rhel8/httpd-24
+30b54f907aa431c225d288e818bda63ad18b8b762e6977a8b382f05d70a86fb1
+[student@workstation ~]$ podman port apache4
+80/tcp -> 0.0.0.0:34991
+[student@workstation ~]$ curl 127.0.0.1:80
+curl: (7) Failed to connect to 127.0.0.1 port 80: Connection refused
+[student@workstation ~]$ podman port apache4
+80/tcp -> 0.0.0.0:34991
+[student@workstation ~]$ podman rm -a
+Error: cannot remove container 30b54f907aa431c225d288e818bda63ad18b8b762e6977a8b382f05d70a86fb1 as it is running - running or paused containers cannot be removed without force: container state improper
+Error: cannot remove container 5d5bf97b3b0793579eea3a96e0f2bc76bef9acce2d4a6da660532afdefb515f0 as it is running - running or paused containers cannot be removed without force: container state improper
+[student@workstation ~]$ podman rm a
+Error: no container with name or ID a found: no such container
+[student@workstation ~]$ podman rm
+Error: you must provide at least one name or id
+[student@workstation ~]$ podman rm --help
+Remove one or more containers
+
+Description:
+  Removes one or more containers from the host. The container name or ID can be used.
+
+  Command does not remove images. Running or unusable containers will not be removed without the -f option.
+
+Usage:
+  podman rm [flags] CONTAINER [CONTAINER...]
+
+Examples:
+  podman rm imageID
+  podman rm mywebserver myflaskserver 860a4b23
+  podman rm --force --all
+  podman rm -f c684f0d469f2
+
+Flags:
+  -a, --all       Remove all containers
+  -f, --force     Force removal of a running or unusable container.  The default is false
+  -l, --latest    Act on the latest container podman is aware of
+      --storage   Remove container from storage library
+  -v, --volumes   Remove the volumes associated with the container
+
+[student@workstation ~]$ podman rm --all
+Error: cannot remove container 30b54f907aa431c225d288e818bda63ad18b8b762e6977a8b382f05d70a86fb1 as it is running - running or paused containers cannot be removed without force: container state improper
+Error: cannot remove container 5d5bf97b3b0793579eea3a96e0f2bc76bef9acce2d4a6da660532afdefb515f0 as it is running - running or paused containers cannot be removed without force: container state improper
+[student@workstation ~]$ podman rm -f --all
+30b54f907aa431c225d288e818bda63ad18b8b762e6977a8b382f05d70a86fb1
+5d5bf97b3b0793579eea3a96e0f2bc76bef9acce2d4a6da660532afdefb515f0
+[student@workstation ~]$ lab manage-networking start
+
+Setting up workstation for the Guided Exercise: Loading the Database
+
+ · Checking podman configuration...............................  SUCCESS
+ · Creating a host directory for the database container:
+   · Adding fcontext policy for /home/student/local/mysql......  SUCCESS
+   · Creating the /home/student/local/mysql directory..........  SUCCESS
+   · Apply fcontext policy to /home/student/local/mysql........  SUCCESS
+   · Change owner of the /home/student/local/mysql to the mysql  SUCCESS
+ · Downloading starter project.................................  SUCCESS
+ · Downloading solution project................................  SUCCESS
+
+Setup successful. Please proceed with the exercise.
+
+
+[student@workstation ~]$ podman run --name mysqldb-port -d -v /home/student/local/mysql:/var/lib/mysql/data -p 13306:3306 -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 registry.redhat.io/rhel8/mysql-80:1
+Trying to pull registry.redhat.io/rhel8/mysql-80:1...
+Getting image source signatures
+Copying blob f70d60810c69 skipped: already exists
+Copying blob 545277d80005 skipped: already exists
+Copying blob 0c1fd83997e1 skipped: already exists
+Copying blob 20cf5078419f done
+Copying config 6563d39225 done
+Writing manifest to image destination
+Storing signatures
+ad41a2dbaac5df4d6779afbe3ac336e9d9707d7d9b013fc7c2dab321a32fb8d9
+[student@workstation ~]$ podman ps --format="{{.ID}} {{.Names}} {{.Ports}}"
+ad41a2dbaac5 mysqldb-port 0.0.0.0:13306-&gt;3306/tcp
+[student@workstation ~]$ mysql -uuser1 -h 127.0.0.1 -pmypa55 -P13306 items < /home/student/DO180/labs/manage-networking/db.sql
+mysql: [Warning] Using a password on the command line interface can be insecure.
+[student@workstation ~]$ podman exec -it mysqldb-port mysql -uroot items -e "SELECT * FROM Item"
++----+-------------------+------+
+| id | description       | done |
++----+-------------------+------+
+|  1 | Pick up newspaper |    0 |
+|  2 | Buy groceries     |    1 |
++----+-------------------+------+
+[student@workstation ~]$ mysql -uuser1 -h 127.0.0.1 -pmypa55 -P13306 items -e "SELECT * FROM Item"
+mysql: [Warning] Using a password on the command line interface can be insecure.
++----+-------------------+------+
+| id | description       | done |
++----+-------------------+------+
+|  1 | Pick up newspaper |    0 |
+|  2 | Buy groceries     |    1 |
++----+-------------------+------+
+[student@workstation ~]$ netstat -natupl| grep LISTEN
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+tcp        0      0 192.168.122.1:53        0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:13306           0.0.0.0:*               LISTEN      26280/slirp4netns   
+tcp        0      0 0.0.0.0:5355            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      -                   
+tcp6       0      0 :::22                   :::*                    LISTEN      -                   
+tcp6       0      0 ::1:631                 :::*                    LISTEN      -                   
+tcp6       0      0 :::5355                 :::*                    LISTEN      -                   
+tcp6       0      0 :::111                  :::*                    LISTEN      -                   
+[student@workstation ~]$ podman ps
+CONTAINER ID  IMAGE                                COMMAND     CREATED        STATUS            PORTS                    NAMES
+ad41a2dbaac5  registry.redhat.io/rhel8/mysql-80:1  run-mysqld  5 minutes ago  Up 5 minutes ago  0.0.0.0:13306->3306/tcp  mysqldb-port
+[student@workstation ~]$ podman exec -it mysqldb-port bash
+bash-4.4$ mysql -uroot items -e "SELECT * FROM Item"
++----+-------------------+------+
+| id | description       | done |
++----+-------------------+------+
+|  1 | Pick up newspaper |    0 |
+|  2 | Buy groceries     |    1 |
++----+-------------------+------+
+bash-4.4$ exit
+exit
+[student@workstation ~]$ podman ps
+CONTAINER ID  IMAGE                                COMMAND     CREATED        STATUS            PORTS                    NAMES
+ad41a2dbaac5  registry.redhat.io/rhel8/mysql-80:1  run-mysqld  7 minutes ago  Up 7 minutes ago  0.0.0.0:13306->3306/tcp  mysqldb-port
+[student@workstation ~]$ lab manage-networking finish 
+
+Completing the Guided Exercise: Loading the Database
+
+ · Stopping the 'mysqldb-port' container.......................  SUCCESS
+ · Removing the 'mysqldb-port' container.......................  SUCCESS
+ · Removing the 'registry.redhat.io/rhel8/mysql-80:1' image....  SUCCESS
+ · Removing the /home/student/local/mysql directory............  SUCCESS
+ · Removing the fcontext for /home/student/local/mysql.........  SUCCESS
+[student@workstation ~]$ lab manage-review start 
+
+Setting up workstation for the Lab: Managing Containers
+
+ · Checking podman configuration...............................  SUCCESS
+ · Check that /home/student/local/mysql does not exist.........  SUCCESS
+ · Downloading starter project.................................  SUCCESS
+ · Downloading solution project................................  SUCCESS
+
+Setup successful. Please proceed with the exercise.
+
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ ll -z /home/student/local/
+ls: invalid option -- 'z'
+Try 'ls --help' for more information.
+[student@workstation ~]$ ll  /home/student/local/
+total 0
+[student@workstation ~]$ mkdir /home/student/local/mysql
+[student@workstation ~]$ ll  /home/student/local/
+total 0
+drwxrwxr-x. 2 student student 6 May 24 06:43 mysql
+[student@workstation ~]$ ls -ldZ /home/student/local/
+drwxrwxr-x. 3 student student unconfined_u:object_r:user_home_t:s0 19 May 24 06:43 /home/student/local/
+[student@workstation ~]$ sudo semanage fcontext -a -t container_file_t '/home/student/local/mysql(/.*)?'
+[student@workstation ~]$ sudo restorecon -R /home/student/local/mysql
+[student@workstation ~]$ ls -ldZ /home/student/local/
+drwxrwxr-x. 3 student student unconfined_u:object_r:user_home_t:s0 19 May 24 06:43 /home/student/local/
+[student@workstation ~]$ ls -ldZ /home/student/local/mysql/
+drwxrwxr-x. 2 student student unconfined_u:object_r:container_file_t:s0 6 May 24 06:43 /home/student/local/mysql/
+[student@workstation ~]$ podman unshare chown -Rv 27:27 /home/student/local/mysql
+changed ownership of '/home/student/local/mysql' from root:root to 27:27
+[student@workstation ~]$ podman run --name mysql-1 -p 13306:3306 -d -v /home/student/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 registry.redhat.io/rhel8/mysql-80:1
+Trying to pull registry.redhat.io/rhel8/mysql-80:1...
+Getting image source signatures
+Copying blob 545277d80005 skipped: already exists
+Copying blob f70d60810c69 skipped: already exists
+Copying blob 0c1fd83997e1 skipped: already exists
+Copying blob 20cf5078419f done
+Copying config 6563d39225 done
+Writing manifest to image destination
+Storing signatures
+7fe198bea50f2be4351da3ac4014a204df23e380c7a2596735332c778d3707b7
+[student@workstation ~]$ podman ps 
+CONTAINER ID  IMAGE                                COMMAND     CREATED         STATUS             PORTS                    NAMES
+7fe198bea50f  registry.redhat.io/rhel8/mysql-80:1  run-mysqld  17 seconds ago  Up 17 seconds ago  0.0.0.0:13306->3306/tcp  mysql-1
+[student@workstation ~]$ mysql -uuser1 -h 127.0.0.1 -pmypa55 -P13306 items < /home/student/DO180/labs/manage-review/db.sql 
+mysql: [Warning] Using a password on the command line interface can be insecure.
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ podman ps 
+CONTAINER ID  IMAGE                                COMMAND     CREATED        STATUS            PORTS                    NAMES
+7fe198bea50f  registry.redhat.io/rhel8/mysql-80:1  run-mysqld  2 minutes ago  Up 2 minutes ago  0.0.0.0:13306->3306/tcp  mysql-1
+[student@workstation ~]$ mysql -uuser1 -h 127.0.0.1 -pmypa55 -P13306 items -e "SELECT * FROM Item"
+mysql: [Warning] Using a password on the command line interface can be insecure.
++----+-------------------+------+
+| id | description       | done |
++----+-------------------+------+
+|  1 | Pick up newspaper |    0 |
+|  2 | Buy groceries     |    1 |
++----+-------------------+------+
+[student@workstation ~]$ podman stop mysql-1
+7fe198bea50f2be4351da3ac4014a204df23e380c7a2596735332c778d3707b7
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ podman run --name mysql-2 -p 13306:3306 -d -v /home/student/local/mysql:/var/lib/mysql/data -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 registry.redhat.io/rhel8/mysql-80:1
+7a16a7af3da58fe4aefde6f9cb44fcec188c27134c2b009e1231cc2acfabc46d
+[student@workstation ~]$ podman ps
+CONTAINER ID  IMAGE                                COMMAND     CREATED         STATUS             PORTS                    NAMES
+7a16a7af3da5  registry.redhat.io/rhel8/mysql-80:1  run-mysqld  24 seconds ago  Up 24 seconds ago  0.0.0.0:13306->3306/tcp  mysql-2
+[student@workstation ~]$ podman ps -a > /tmp/mycontainers
+[student@workstation ~]$ cat /tmp/mycontainers 
+CONTAINER ID  IMAGE                                COMMAND     CREATED             STATUS                         PORTS                    NAMES
+7a16a7af3da5  registry.redhat.io/rhel8/mysql-80:1  run-mysqld  About a minute ago  Up About a minute ago          0.0.0.0:13306->3306/tcp  mysql-2
+7fe198bea50f  registry.redhat.io/rhel8/mysql-80:1  run-mysqld  5 minutes ago       Exited (0) About a minute ago  0.0.0.0:13306->3306/tcp  mysql-1
+[student@workstation ~]$ podman exec -it mysql-2 bash
+bash-4.4$ mysql -uroot
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.26 Source distribution
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databaes;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databaes' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| items              |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.01 sec)
+
+mysql> use items;
+Database changed
+mysql> SELECT * FROM Item;
++----+-------------------+------+
+| id | description       | done |
++----+-------------------+------+
+|  1 | Pick up newspaper |    0 |
+|  2 | Buy groceries     |    1 |
++----+-------------------+------+
+2 rows in set (0.01 sec)
+
+mysql> exit
+Bye
+bash-4.4$ exit
+exit
+[student@workstation ~]$ hostname
+workstation.lab.example.com
+[student@workstation ~]$ mysql -uuser1 -h $hostname -pmypa55 -P13306 items
+ERROR 2005 (HY000): Unknown MySQL server host '-pmypa55' (22)
+[student@workstation ~]$ mysql -uuser1 -h workstation.lab.example.com -pmypa55 -P13306 items
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.26 Source distribution
+
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> insert into Item (description, done) values ('Finished lab', 1);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> exit
+Bye
+[student@workstation ~]$ mysql -uuser1 -h workstation.lab.example.com -pmypa55 -P13306 items
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.26 Source distribution
+
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| items              |
++--------------------+
+2 rows in set (0.00 sec)
+
+mysql> use items
+Database changed
+mysql> SELECT * FROM items;
+ERROR 1146 (42S02): Table 'items.items' doesn't exist
+mysql> show tables;
++-----------------+
+| Tables_in_items |
++-----------------+
+| Item            |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM Item;
++----+-------------------+------+
+| id | description       | done |
++----+-------------------+------+
+|  1 | Pick up newspaper |    0 |
+|  2 | Buy groceries     |    1 |
+|  3 | Finished lab      |    1 |
++----+-------------------+------+
+3 rows in set (0.00 sec)
+
+mysql> exit
+Bye
+[student@workstation ~]$ podman rm mysql-1
+7fe198bea50f2be4351da3ac4014a204df23e380c7a2596735332c778d3707b7
+[student@workstation ~]$ lab manage-review grade 
+
+Grading the student's work for the Lab: Managing Containers
+
+ · Checking if the /home/student/local/mysql folder exists.....  PASS
+ · Checking if owner was changed...............................  PASS
+ · Checking if the container mysql-1 was created...............  FAIL
+ · Checking if the mysql-2 container is running................  PASS
+ · Checking tables for the 'Finished lab' row..................  PASS
+[student@workstation ~]$ lab manage-review finish 
+
+Completing the Lab: Managing Containers
+
+ · Removing the /home/student/local/mysql folder...............  SUCCESS
+ · Removing the fcontext for /home/student/local/mysql.........  SUCCESS
+ · Stopping mysql-1 container..................................  SUCCESS
+ · Removing mysql-1 container..................................  SUCCESS
+ · Stopping mysql-2 container..................................  SUCCESS
+ · Removing mysql-2 container..................................  SUCCESS
+ · Removing MySQL container image..............................  SUCCESS
+ · Removing temporary file.....................................  SUCCESS
+ · Removing the project directory..............................  SUCCESS
+ · Removing the solution directory.............................  SUCCESS
+[student@workstation ~]$ lab image-operations start
+
+Setting up workstation for the GE: Creating a Custom Apache Container Image
+
+ · Checking podman configuration...............................  SUCCESS
+[student@workstation ~]$ podman login quay.io
+Username: ramymw
+Password: 
+Error: error logging into "quay.io": invalid username/password
+[student@workstation ~]$ podman login quay.io
+Username: ramymw
+Password: 
+Login Succeeded!
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ podman run -d --name official.httpd -p 8180:80 quay.io/redhattraining/httpd-parent
+Trying to pull quay.io/redhattraining/httpd-parent...
+Getting image source signatures
+Copying blob a3ed95caeb02 done
+Copying blob 6a5240d60dc4 done
+Copying blob a3ed95caeb02 done
+Copying blob 787f47dbeaac done
+Copying blob a3ed95caeb02 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 08b8c9fdec44 done
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob a3ed95caeb02 skipped: already exists
+Copying blob 408208567b9a done
+Writing manifest to image destination
+Storing signatures
+c794e004bc074af5726deadbc20fea00785fc09ba7a152a09ee51ea79427446d
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ podman exec -it official.httpd bash
+bash-4.4# echo "DO180 Page" > /var/www/html/do180.html
+bash-4.4# exit
+exit
+[student@workstation ~]$ podman ps
+CONTAINER ID  IMAGE                                       COMMAND               CREATED             STATUS                 PORTS                 NAMES
+c794e004bc07  quay.io/redhattraining/httpd-parent:latest  /bin/sh -c /usr/s...  About a minute ago  Up About a minute ago  0.0.0.0:8180->80/tcp  official.httpd
+[student@workstation ~]$ curl 127.0.0.1:8180
+Hello from the httpd-parent container!
+[student@workstation ~]$ curl 127.0.0.1:8180/do180.html
+DO180 Page
+[student@workstation ~]$ podman diff official.httpd 
+C /var
+C /var/log
+C /var/log/httpd
+A /var/log/httpd/access_log
+A /var/log/httpd/error_log
+C /var/www
+C /var/www/html
+A /var/www/html/do180.html
+C /root
+A /root/.bash_history
+C /run/httpd
+A /run/httpd/cgisock.1
+A /run/httpd/httpd.pid
+[student@workstation ~]$ podman stop official.httpd 
+c794e004bc074af5726deadbc20fea00785fc09ba7a152a09ee51ea79427446d
+[student@workstation ~]$ podman commit -a 'ramymw' official.httpd do180-custom-httpd
+Getting image source signatures
+Copying blob 24d85c895b6b skipped: already exists
+Copying blob c613b100be16 skipped: already exists
+Copying blob 574bcc187eda skipped: already exists
+Copying blob 7f9108fde4a1 skipped: already exists
+Copying blob 66d0f33a73a4 done
+Copying config f26c34a945 done
+Writing manifest to image destination
+Storing signatures
+f26c34a945a319b727346dfb598a2d53a5654f97828198ca2834d50da44458a6
+[student@workstation ~]$ podman im
+Error: unrecognized command `podman im`
+Try 'podman --help' for more information.
+[student@workstation ~]$ podman images
+REPOSITORY                            TAG      IMAGE ID       CREATED          SIZE
+localhost/do180-custom-httpd          latest   f26c34a945a3   23 seconds ago   236 MB
+registry.redhat.io/rhel8/httpd-24     latest   bed94ad3a0ed   2 weeks ago      461 MB
+quay.io/redhattraining/httpd-parent   latest   4346d3cace25   2 years ago      236 MB
+[student@workstation ~]$ cat /usr/local/etc/ocp4.config 
+RHT_OCP4_MASTER_API=https://api.ocp4.example.com:6443
+RHT_OCP4_WILDCARD_DOMAIN=apps.ocp4.example.com
+RHT_OCP4_NEXUS_SERVER=nexus-common.apps.ocp4.example.com
+RHT_OCP4_DEV_USER=developer
+RHT_OCP4_DEV_PASSWORD=developer
+RHT_OCP4_GITHUB_USER=ramw86
+RHT_OCP4_QUAY_USER=ramymw
+RHT_OCP4_USER_PASSWD=redhat
+[student@workstation ~]$ source /usr/local/etc/ocp4.config 
+[student@workstation ~]$ podman tag do180-custom-httpd quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+[student@workstation ~]$ podman images
+REPOSITORY                            TAG      IMAGE ID       CREATED         SIZE
+localhost/do180-custom-httpd          latest   f26c34a945a3   3 minutes ago   236 MB
+quay.io/ramymw/do180-custom-httpd     v1.0     f26c34a945a3   3 minutes ago   236 MB
+registry.redhat.io/rhel8/httpd-24     latest   bed94ad3a0ed   2 weeks ago     461 MB
+quay.io/redhattraining/httpd-parent   latest   4346d3cace25   2 years ago     236 MB
+[student@workstation ~]$ podman push quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+Getting image source signatures
+Copying blob 66d0f33a73a4 done
+Copying blob 7f9108fde4a1 skipped: already exists
+Copying blob c613b100be16 skipped: already exists
+Copying blob 574bcc187eda skipped: already exists
+Copying blob 24d85c895b6b skipped: already exists
+Copying config f26c34a945 done
+Writing manifest to image destination
+Storing signatures
+[student@workstation ~]$ podman pull -q quay.io/${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+f26c34a945a319b727346dfb598a2d53a5654f97828198ca2834d50da44458a6
+[student@workstation ~]$ podman run -d --name test-httpd -p 8280:80 ${RHT_OCP4_QUAY_USER}/do180-custom-httpd:v1.0
+b46bf61f58e878e448e45840f36b1616f68d703a1bf21f8f57a157835b95a52c
+[student@workstation ~]$ curl 127.0.0.1:8280/do180.html
+DO180 Page
+[student@workstation ~]$ lab image-operations finish
+
+Completing the GE: Creating a Custom Apache Container Image
+
+ · Stopping official-httpd container...........................  SUCCESS
+ · Removing official-httpd container...........................  SUCCESS
+ · Stopping test-httpd container...............................  SUCCESS
+ · Removing test-httpd container...............................  SUCCESS
+ · Removing redhattraining/httpd-parent image..................  SUCCESS
+ · Removing quay.io/ramymw/do180-custom-httpd image............  SUCCESS
+ · Removing localhost/do180-custom-httpd image.................  SUCCESS
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ lab image-review start
+
+Setting up workstation for the Lab: Managing Images
+
+ · Checking podman configuration...............................  SUCCESS
+[student@workstation ~]$ podman pull quay.io/redhattraining/nginx:1.17
+Trying to pull quay.io/redhattraining/nginx:1.17...
+Getting image source signatures
+Copying blob d1a81ca518e2 done
+Copying blob b00ee4473ca6 done
+Copying blob c78335199707 done
+Copying config 9beeba249f done
+Writing manifest to image destination
+Storing signatures
+9beeba249f3ee158d3e495a6ac25c5667ae2de8a43ac2a8bfd2bf687a58c06c9
+[student@workstation ~]$ podman images
+REPOSITORY                          TAG      IMAGE ID       CREATED       SIZE
+registry.redhat.io/rhel8/httpd-24   latest   bed94ad3a0ed   2 weeks ago   461 MB
+quay.io/redhattraining/nginx        1.17     9beeba249f3e   2 years ago   131 MB
+[student@workstation ~]$ podman run --name officail-nginx -d -p 8080:80 quary.io/redhattraining/nginx:1.17
+Trying to pull quary.io/redhattraining/nginx:1.17...
+  Get https://quary.io/v2/: dial tcp: lookup quary.io on 172.25.250.254:53: no such host
+Error: unable to pull quary.io/redhattraining/nginx:1.17: unable to pull image: Error initializing source docker://quary.io/redhattraining/nginx:1.17: error pinging docker registry quary.io: Get https://quary.io/v2/: dial tcp: lookup quary.io on 172.25.250.254:53: no such host
+[student@workstation ~]$ podman run --name officail-nginx -d -p 8080:80 quary.io/redhattraining/nginx:1.17
+Trying to pull quary.io/redhattraining/nginx:1.17...
+  Get https://quary.io/v2/: dial tcp: lookup quary.io on 172.25.250.254:53: no such host
+Error: unable to pull quary.io/redhattraining/nginx:1.17: unable to pull image: Error initializing source docker://quary.io/redhattraining/nginx:1.17: error pinging docker registry quary.io: Get https://quary.io/v2/: dial tcp: lookup quary.io on 172.25.250.254:53: no such host
+[student@workstation ~]$ podman run --name officail-nginx -d -p 8080:80 quay.io/redhattraining/nginx:1.17
+6ed6bd383347c84d134514a22aafe9ad2f00ed927e77b6205fa1229d60cc4b61
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ podman exec -it officail-nginx bash
+root@6ed6bd383347:/# echo "DO180" > /usr/share/nginx/html/index.html
+root@6ed6bd383347:/# exit
+exit
+[student@workstation ~]$ curl 127.0.0.1:8080
+DO180
+[student@workstation ~]$ podman stop officail-nginx 
+6ed6bd383347c84d134514a22aafe9ad2f00ed927e77b6205fa1229d60cc4b61
+[student@workstation ~]$ podman commit -a 'ramymw' officail-nginx do180/mynginx:v1.0-SNAPSHOT
+Getting image source signatures
+Copying blob ffc9b21953f4 skipped: already exists
+Copying blob 2f4accd375d9 skipped: already exists
+Copying blob 6c7de695ede3 skipped: already exists
+Copying blob 792234c4e186 done
+Copying config bc6ad3c048 done
+Writing manifest to image destination
+Storing signatures
+bc6ad3c0488767540db5638cd99bb126770b2c4b2690afb6403f7e984195e9ef
+[student@workstation ~]$ podman images
+REPOSITORY                          TAG             IMAGE ID       CREATED         SIZE
+localhost/do180/mynginx             v1.0-SNAPSHOT   bc6ad3c04887   8 seconds ago   131 MB
+registry.redhat.io/rhel8/httpd-24   latest          bed94ad3a0ed   2 weeks ago     461 MB
+quay.io/redhattraining/nginx        1.17            9beeba249f3e   2 years ago     131 MB
+[student@workstation ~]$ podman run --name official-nginx-dev -d -p 8080:80 do180/mynginx:v1.0-SNAPSHOT
+7d5f91df5b12fc60ea05b4e6af6bab7a2b34ddc3c7bc64a47c08b53c214777d4
+[student@workstation ~]$ curl 127.0.0.1:8080
+DO180
+[student@workstation ~]$ podman exec -it official-nginx-dev bash
+root@7d5f91df5b12:/# echo 'DO180 Page' > /usr/share/nginx/html/index.html 
+root@7d5f91df5b12:/# exit
+exit
+[student@workstation ~]$ curl 127.0.0.1:8080
+DO180 Page
+[student@workstation ~]$ podman stop official-nginx-dev 
+7d5f91df5b12fc60ea05b4e6af6bab7a2b34ddc3c7bc64a47c08b53c214777d4
+[student@workstation ~]$ podman commit -a 'ramymw' officail-nginx-dev do180/mynginx:v1.0
+Error: error looking up container "officail-nginx-dev": no container with name or ID officail-nginx-dev found: no such container
+[student@workstation ~]$ podman commit -a 'ramymw' official-nginx-dev do180/mynginx:v1.0
+Getting image source signatures
+Copying blob ffc9b21953f4 skipped: already exists
+Copying blob 2f4accd375d9 skipped: already exists
+Copying blob 6c7de695ede3 skipped: already exists
+Copying blob 792234c4e186 skipped: already exists
+Copying blob 4d8d7821e1e6 done
+Copying config 1d6790982f done
+Writing manifest to image destination
+Storing signatures
+1d6790982f4054011489e5370c6bc1ab8ed2a080a9a961fc4391d3f6f1634e82
+[student@workstation ~]$ podman images
+REPOSITORY                          TAG             IMAGE ID       CREATED          SIZE
+localhost/do180/mynginx             v1.0            1d6790982f40   20 seconds ago   131 MB
+localhost/do180/mynginx             v1.0-SNAPSHOT   bc6ad3c04887   5 minutes ago    131 MB
+registry.redhat.io/rhel8/httpd-24   latest          bed94ad3a0ed   2 weeks ago      461 MB
+quay.io/redhattraining/nginx        1.17            9beeba249f3e   2 years ago      131 MB
+[student@workstation ~]$ podman ps -a
+CONTAINER ID  IMAGE                                  COMMAND               CREATED         STATUS                    PORTS                 NAMES
+7d5f91df5b12  localhost/do180/mynginx:v1.0-SNAPSHOT  nginx -g daemon o...  4 minutes ago   Exited (0) 2 minutes ago  0.0.0.0:8080->80/tcp  official-nginx-dev
+6ed6bd383347  quay.io/redhattraining/nginx:1.17      nginx -g daemon o...  10 minutes ago  Exited (0) 8 minutes ago  0.0.0.0:8080->80/tcp  officail-nginx
+[student@workstation ~]$ podman rm official-nginx-dev 
+7d5f91df5b12fc60ea05b4e6af6bab7a2b34ddc3c7bc64a47c08b53c214777d4
+[student@workstation ~]$ podman ps -a
+CONTAINER ID  IMAGE                              COMMAND               CREATED         STATUS                    PORTS                 NAMES
+6ed6bd383347  quay.io/redhattraining/nginx:1.17  nginx -g daemon o...  11 minutes ago  Exited (0) 8 minutes ago  0.0.0.0:8080->80/tcp  officail-nginx
+[student@workstation ~]$ podman rmi do180/mynginx:v1.0-SNAPSHOT
+Untagged: localhost/do180/mynginx:v1.0-SNAPSHOT
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ 
+[student@workstation ~]$ podman images 
+REPOSITORY                          TAG      IMAGE ID       CREATED         SIZE
+localhost/do180/mynginx             v1.0     1d6790982f40   3 minutes ago   131 MB
+registry.redhat.io/rhel8/httpd-24   latest   bed94ad3a0ed   2 weeks ago     461 MB
+quay.io/redhattraining/nginx        1.17     9beeba249f3e   2 years ago     131 MB
+[student@workstation ~]$ podman run -d --name my-nginx -p 8280:80 do180/mynginx:v1.0
+8d914e713b82103a5b860b96bbf7dc7d3f00a772ed18e8bbc679820c4ad0d3eb
+[student@workstation ~]$ curl 127.0.0.1:8280
+DO180 Page
+[student@workstation ~]$ lab image-review grade 
+
+Grading the student's work for the Lab: Managing Images
+
+ · Nginx container image is pulled.............................  PASS
+ · Container official-nginx is created.........................  FAIL
+ · Container official-nginx is stopped.........................  PASS
+ · Tag do180/mynginx:v1.0-SNAPSHOT is removed..................  PASS
+ · Tag do180/mynginx:v1.0 is created...........................  PASS
+ · Container my-nginx is created and running...................  PASS
+ · index.html is available with the custom content.............  PASS
+[student@workstation ~]$ podman ps
+CONTAINER ID  IMAGE                         COMMAND               CREATED             STATUS                 PORTS                 NAMES
+8d914e713b82  localhost/do180/mynginx:v1.0  nginx -g daemon o...  About a minute ago  Up About a minute ago  0.0.0.0:8280->80/tcp  my-nginx
+[student@workstation ~]$ lab image-review finish 
+
+Completing the Lab: Managing Images
+
+ · Stopping official-nginx-dev container.......................  SUCCESS
+ · Removing official-nginx-dev container.......................  SUCCESS
+ · Stopping official-nginx container...........................  SUCCESS
+ · Removing official-nginx container...........................  SUCCESS
+ · Removing do180/mynginx:v1.0 image...........................  SUCCESS
+ · Removing quay.io/redhattraining/nginx:1.17 image............  SUCCESS
+[student@workstation ~]$ 
+
